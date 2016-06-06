@@ -1,13 +1,14 @@
 {
-  "name":			"blop",
-  "version":		"0.0.1",
-  "description":	"blop",
-  "main":			"blop.js",
-  "author":			"Tenghuan He",
-  "private":		true,
-  "license":		"BSD",
-  "dependencies":	{
-    "socket.io":	"1.3.2",
-	"express":		"3.4.8"
+  "name": "blop",
+  "version": "0.0.1",
+  "description": "blop",
+  "main": "blop.js",
+  "author": "Tenghuan He",
+  "private": true,
+  "license": "BSD",
+  "dependencies": {
+    "express": "3.4.8",
+    "jade": "^1.11.0",
+    "socket.io": "1.3.2"
   }
 }

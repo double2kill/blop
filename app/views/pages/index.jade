@@ -1,0 +1,15 @@
+extend ../layout
+
+block content
+  .container
+    .row
+      lable.col-sm-2.control-label(for="inputName") Please set your ID
+      .col-sm-3
+        input#inputID.form-control(type="text", name="name", value="")
+      button.col-sm-1.btn.btn-primary(type="submit") submit
+  .container
+    .col-lg-6
+      .input-group
+        input.form-control(type="text")
+        span.input-group-btn
+          button.btn.btn-default(type="button") send
