@@ -1,23 +1,53 @@
 extend ../layout
 
+//- 用于生成固定的contentbox
+//-   is_odd: odd/even
+//-   pic: picture src
+//-   name: username
+//-   time: content time
+//-   content: content information
+mixin contentbox(is_odd, pic, name, time, content)
+  li(class= is_odd)
+    a.user
+      img.img-responsive.avatar_(src= pic)
+      span.user-name #{name}
+    .reply-content-box
+      span.reply-time #{time}
+      .reply-content.pr 
+        span.arrow 
+        | #{content}
+
 block content
   .container
     .row
-      lable.col-sm-2.control-label(for="inputName") Please set your ID
       .col-sm-3
-        input#inputID.form-control(type="text", name="name", value="")
+        input#inputID.form-control(type="text", name="name", value="", placeholder="Please set your talkID")
       button.col-sm-1.btn.btn-primary(type="submit") submit
-  .container
+  .container.bg-white(data-spy="scroll" data-target="#navbar-example" data-offset="0" style="height:400px;overflow:auto; position: relative;")
+    //- div(data-spy="scroll" data-target="#navbar-example" data-offset="0" style="height:200px;overflow:auto; position: relative;")
+      p lfaskj
+      p lfaskj
+      p lfaskj
+      p lfaskj
+      p lfaskj
+      p lfaskj
+      p lfaskj
+      p lfaskj
+      p lfaskj
+      p lfaskj
+
     ui.content-reply-box.mg10
-      li.odd
-        .user
-          img.img-rounded(src="/images/one.jpg")
-      li.even
-        .user
-          img.img-rounded(src="/images/one.jpg")
+      //- use mixin, name=contentbox
+      +contentbox("even", "/images/one.jpg", "何腾欢", "17:34:11", "粽子节快乐！")
+      +contentbox("odd", "/images/one.jpg", "洪淑芳", "17:34:25", "happy")
+      +contentbox("even", "/images/one.jpg", "何腾欢", "17:34:32", "请你吃饭")
+      +contentbox("odd", "/images/one.jpg", "洪淑芳", "11:42:23", "好啊")
+      +contentbox("odd", "/images/one.jpg", "洪淑芳", "11:42:23", "刘晨找你，赶紧回复他一下")
+      +contentbox("even", "/images/one.jpg", "洪淑芳", "11:42:23", "我知道")
+
   .container
-    .col-lg-6
+    .col-lg-8
       .input-group
-        input.form-control(type="text")
+        input#inputContent.form-control(type="text")
         span.input-group-btn
           button.btn.btn-default(type="button") send
