@@ -35,5 +35,5 @@ li{list-style:none;}
 .pr{position:relative;}
 .oh{overflow:hidden;}
 .mg10 {margin:10px 0;}
-.bg-white{background-color: #f2f2f2;box-shadow:0 0 5px #ccc;border:1px solid #ccc;}
+.bg-gray{background-color: #f2f2f2;box-shadow:0 0 5px #ccc;border:1px solid #ccc;}
 .linear-g{background: -moz-linear-gradient(top, #fdfdfd, #f6f6f6);background: -webkit-gradient(linear,top,from(#fdfdfd),to(#f6f6f6));background: -webkit-linear-gradient(top, #fdfdfd, #f6f6f6);background: -o-linear-gradient(top, #fdfdfd, #f6f6f6);box-shadow:0 0 5px #ccc;}

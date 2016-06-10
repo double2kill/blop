@@ -23,20 +23,8 @@ block content
       .col-sm-3
         input#inputID.form-control(type="text", name="name", value="", placeholder="Please set your talkID")
       button.col-sm-1.btn.btn-primary(type="submit") submit
-  .container.bg-white(data-spy="scroll" data-target="#navbar-example" data-offset="0" style="height:400px;overflow:auto; position: relative;")
-    //- div(data-spy="scroll" data-target="#navbar-example" data-offset="0" style="height:200px;overflow:auto; position: relative;")
-      p lfaskj
-      p lfaskj
-      p lfaskj
-      p lfaskj
-      p lfaskj
-      p lfaskj
-      p lfaskj
-      p lfaskj
-      p lfaskj
-      p lfaskj
-
-    ui.content-reply-box.mg10
+  .container.bg-gray(style="height:600px; overflow:auto; position:relative;")
+    ul.content-reply-box.mg10
       //- use mixin, name=contentbox
       +contentbox("even", "/images/one.jpg", "何腾欢", "17:34:11", "粽子节快乐！")
       +contentbox("odd", "/images/one.jpg", "洪淑芳", "17:34:25", "happy")
@@ -45,9 +33,23 @@ block content
       +contentbox("odd", "/images/one.jpg", "洪淑芳", "11:42:23", "刘晨找你，赶紧回复他一下")
       +contentbox("even", "/images/one.jpg", "洪淑芳", "11:42:23", "我知道")
 
+      //- 用angularjs模式向对话框输入模板。
+      div(ng-repeat="x in chatLog")
+        li(class= '{{x.is_odd}}')
+          a.user
+            img.img-responsive.avatar_(ng-src="{{x.pic}}")
+            span.user-name {{x.name}}
+          .reply-content-box
+            span.reply-time {{x.time}}
+            .reply-content.pr 
+              span.arrow 
+              | {{x.content}}
+
   .container
     .col-lg-8
       .input-group
-        input#inputContent.form-control(type="text")
+        input.form-control(type="text", ng-model="todoInput", ng-keyup="myKeyup($event)")
         span.input-group-btn
-          button.btn.btn-default(type="button") send
+          button.btn.btn-default(ng-click="send()") send
+        
+  script(src="/js/myChatApp.js")
